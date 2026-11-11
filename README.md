@@ -19,14 +19,17 @@ Big Data Development Technology Course Lab Record
 (1) 启动 Hadoop 服务：
 bash
 start-all.sh
+
 (2) 编译并打包：
 bash
 javac -cp".:/opt/hbase/lib/*:/opt/hadoop/share/hadoop/common/*:/opt/hadoop/share/hadoop/hdfs/*:/opt/hadoop/share/hadoop/mapreduce/*:/opt/hadoop/share/hadoop/yarn/*" my/hbase/ReadWriteHBase.java
 jar -cvf ~/hbase_case3.jar -C /data/case3/src/ my/
+
 (3) 提交任务：
 bash
 export HADOOP_CLASSPATH=$(hbase mapredcp):/opt/hbase/conf
 hadoop jar ~/hbase_case3.jar my.hbase.ReadWriteHBase
+
 (4) 验证结果：
 bash
 hbase shell
